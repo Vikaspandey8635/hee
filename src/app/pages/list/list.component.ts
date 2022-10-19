@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class ListComponent implements OnInit {
 
-  displayedColumns: string[] = ['employee_name', 'employee_salary', 'employee_age', 'action'];
+  displayedColumns: string[] = ['id','employee_name', 'employee_salary', 'employee_age', 'action'];
   dataSource !: MatTableDataSource<any>
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -51,6 +51,10 @@ export class ListComponent implements OnInit {
     this.route.navigate(["/"])
   }
 
+  view(){
+    this.route.navigate(["view"])
+  }
+
   delete(data:any){
     console.log(data, "dataaaa");
     Swal.fire({
@@ -66,9 +70,8 @@ export class ListComponent implements OnInit {
         this.http
           .deleteRequestWithID('deleteById', data)
           .subscribe((response: any) => {
-            console.log(response,'deleteresponse');    
+            console.log(response.allEmployees,'deleteresponse');    
             this.getAllData();
-            // this._commService.presentsToast('success', 'top-end', 'User deleted Successfully!');
           });
       }
     });

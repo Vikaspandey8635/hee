@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditlistComponent } from './editlist/editlist.component';
+import { ViewlistComponent } from './viewlist/viewlist.component';
 
 
 
@@ -23,7 +24,8 @@ import { EditlistComponent } from './editlist/editlist.component';
     HomeComponent,
     ListComponent,
     AddlistComponent,
-    EditlistComponent
+    EditlistComponent,
+    ViewlistComponent
   ],
   imports: [
     CommonModule,

@@ -26,6 +26,13 @@ export class ApiService {
 
   deleteRequestWithID(endPoint: string, id: string) {
     return this.http.delete(this.baseUrl + apiList[endPoint] + '/' + id);
+  }
+  getRequestWithID(endPoint: string, id: string) {
+    return this.http.get(this.baseUrl + apiList[endPoint] + '/' + id);
+
+  }
+  putRequestWithID(endPoint: string, id: string, reqBody: any) {
+    return this.http.put(this.baseUrl + apiList[endPoint] + '/' + id, reqBody)
 
   }
 }

@@ -1,6 +1,6 @@
 <div>
     <form [formGroup]="editForm">
-        <h3>Edit Filed</h3>
+        <h3>view Filed</h3>
      <!-- <mat-form-field appearance="fill">
         <mat-label>Enter Employee id</mat-label>
         <input matInput type="text" formControlName="id">
@@ -8,21 +8,18 @@
 
       <mat-form-field appearance="fill">
       <mat-label>Enter Employee Name</mat-label>
-      <input matInput type="text" formControlName="employeeName">
+      <input matInput type="text" formControlName="employeeName" [readonly]="true">
       </mat-form-field><br>
 
       <mat-form-field appearance="fill">
         <mat-label>Enter Employee Salary</mat-label>
-        <input matInput type="number"formControlName="employeeSalary" > 
+        <input matInput type="number"formControlName="employeeSalary" [readonly]="true" > 
        </mat-form-field><br>
 
        <mat-form-field appearance="fill">
         <mat-label>Enter Employee Age</mat-label>
-        <input matInput type="number"  formControlName="employeeAge">
+        <input matInput type="number"  formControlName="employeeAge" [readonly]="true">
       </mat-form-field>
 
     </form>
-    
-    <button mat-button color="primary" (click)="updateSubmit()">Update</button>
-</div>
-
+    <button mat-button color="primary" (click)="closed()">closed</button>
