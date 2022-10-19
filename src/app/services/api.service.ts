@@ -23,4 +23,9 @@ export class ApiService {
   postRequest(endPoint: any, reqBody: any) {
     return this.http.post(this.baseUrl + apiList[endPoint], reqBody)
   }
+
+  deleteRequestWithID(endPoint: string, id: string) {
+    return this.http.delete(this.baseUrl + apiList[endPoint] + '/' + id);
+
+  }
 }

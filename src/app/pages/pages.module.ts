@@ -14,6 +14,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditlistComponent } from './editlist/editlist.component';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     HomeComponent,
     ListComponent,
-    AddlistComponent
+    AddlistComponent,
+    EditlistComponent
   ],
   imports: [
     CommonModule,

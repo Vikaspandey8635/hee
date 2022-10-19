@@ -4,6 +4,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Route, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -48,6 +49,29 @@ export class ListComponent implements OnInit {
 
   back(){
     this.route.navigate(["/"])
+  }
+
+  delete(data:any){
+    console.log(data, "dataaaa");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result:any) => {
+      if (result.value) {
+        this.http
+          .deleteRequestWithID('deleteById', data)
+          .subscribe((response: any) => {
+            console.log(response,'deleteresponse');    
+            this.getAllData();
+            // this._commService.presentsToast('success', 'top-end', 'User deleted Successfully!');
+          });
+      }
+    });
   }
 
 }
